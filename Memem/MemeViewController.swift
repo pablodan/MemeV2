@@ -18,6 +18,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var shareButton: UIBarButtonItem!    
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topToolbar: UIToolbar!
+    
+    var meme = Meme()
 
     override func viewDidLoad()
     {
@@ -121,16 +123,30 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imagePicker.sourceType =  sourceType
         present(imagePicker, animated: true, completion: nil)
     }
-    
+    /*
     
     func saveMeme (_ image: UIImage)
     {
         let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image, savedMeme: image)
         
+        
+        
         // Save Meme to "presistent storage" in AppDelegate :))
         (UIApplication.shared.delegate as! AppDelegate).allMemes.append(meme)
     }
-
+*/
+    
+    func saveMeme(_ image: UIImage) {
+        meme.topText = topText.text!
+        meme.bottomText = bottomText.text!
+        meme.originalImage = imagePickerView.image!
+        meme.savedMeme = image
+        
+        // Save Meme to "presistent storage" in AppDelegate :))
+        (UIApplication.shared.delegate as! AppDelegate).allMemes.append(meme)
+    }
+    
+    
     @IBAction func shareMeme (_ sender: Any)
     {
         let image = generatedMemedImage()

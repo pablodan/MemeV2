@@ -17,32 +17,38 @@ class MemeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            tableView.reloadData()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         tableView.reloadData()
     }
 
     // MARK: - Table view data source
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allMemes.count
+    }
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
        return allMemes.count
     }
+*/
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return allMemes.count
-    }
-
+  
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let meme = allMemes[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "memeCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memeCell")
 
         // Configure the cell...
-        cell.imageView?.image = meme.savedMeme
-        cell.textLabel?.text = meme.topText
-        cell.detailTextLabel?.text = meme.bottomText
+        cell?.imageView?.image = meme.savedMeme
+        cell?.textLabel?.text = meme.topText
+        cell?.detailTextLabel?.text = meme.bottomText
 
-        return cell
+        return cell!
     }
     
 
@@ -59,7 +65,6 @@ class MemeTableViewController: UITableViewController {
     */
     
     @IBAction func displayMemeView(_ sender: Any) {
-        
         
     }
 
