@@ -12,7 +12,7 @@ private let reuseIdentifier = "Cell"
 
 class MemeCollectionViewController: UICollectionViewController {
     
-    @IBOutlet weak var displayImage: UIImageView?
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     var allMemes: [Meme]
     {
@@ -29,6 +29,25 @@ class MemeCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView?.reloadData()
+        
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
 
     /*
@@ -43,11 +62,11 @@ class MemeCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    /*override func numberOfSections(in collectionView: UICollectionView) -> Int {
+   override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-*/
+
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
@@ -55,11 +74,13 @@ class MemeCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCell", for: indexPath)
+        
+        let meme = allMemes[indexPath.row]
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCell", for: indexPath) as! MemeCollectionViewCell
     
         // Configure the cell
-        cell.image.image = all
-        
+        cell.displayImage.image = meme.savedMeme
     
         return cell
     }
@@ -95,4 +116,32 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     */
 
+    
+ 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
