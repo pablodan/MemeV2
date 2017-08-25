@@ -93,6 +93,11 @@ class MemeCollectionViewController: UICollectionViewController {
 
     }
     
+    @IBAction func navigateToEditMeme(_ sender: Any)
+    {
+    
+    }
+    
  
 }
 
