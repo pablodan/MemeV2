@@ -22,8 +22,4 @@ class DisplaySelectedViewController: UIViewController {
         resultImage.image = selectedMeme.savedMeme
     }
 
-
-
- 
-
 }

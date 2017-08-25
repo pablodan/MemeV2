@@ -92,37 +92,5 @@ class MemeCollectionViewController: UICollectionViewController {
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
 
     }
-    
-    @IBAction func navigateToEditMeme(_ sender: Any)
-    {
-    
-    }
-    
- 
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
