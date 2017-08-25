@@ -131,7 +131,7 @@
             </objects>
             <point key="canvasLocation" x="2340" y="-425.03748125937034"/>
         </scene>
-        <!--Meme List-->
+        <!--Sent Memes-->
         <scene sceneID="NAu-rE-zf3">
             <objects>
                 <tableViewController id="B7l-Xr-DuD" customClass="MemeTableViewController" customModule="Memem" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,7 +170,7 @@
                             <outlet property="delegate" destination="B7l-Xr-DuD" id="DKX-8A-6Dk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Meme List" id="sBr-PF-tWY">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="sBr-PF-tWY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yTM-mP-tAX">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="Une-mY-ZvZ"/>
@@ -201,7 +201,7 @@
             </objects>
             <point key="canvasLocation" x="432.80000000000001" y="-1319.1904047976013"/>
         </scene>
-        <!--Meme Collection-->
+        <!--Sent Memes-->
         <scene sceneID="TyV-p6-ENw">
             <objects>
                 <collectionViewController id="xAU-MO-00Y" customClass="MemeCollectionViewController" customModule="Memem" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,7 +239,7 @@
                             <outlet property="delegate" destination="xAU-MO-00Y" id="0KS-MO-xYw"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Meme Collection" id="sZN-o5-deW"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="sZN-o5-deW"/>
                     <connections>
                         <outlet property="flowLayout" destination="nj6-HO-gwP" id="kyo-Az-wET"/>
                     </connections>
