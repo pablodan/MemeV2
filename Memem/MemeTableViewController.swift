@@ -30,14 +30,7 @@ class MemeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allMemes.count
     }
-    /*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-       return allMemes.count
-    }
-*/
 
-  
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let meme = allMemes[indexPath.row]
@@ -51,21 +44,30 @@ class MemeTableViewController: UITableViewController {
         return cell!
     }
     
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    @IBAction func displayMemeView(_ sender: Any) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let newController = storyboard!.instantiateViewController(withIdentifier: "SelectedViewController") as! DisplaySelectedViewController
+        newController.selectedMeme = allMemes[indexPath.row]
+        
+        navigationController!.pushViewController(newController, animated: true)
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

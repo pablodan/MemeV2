@@ -8,7 +8,7 @@
 
 
 import UIKit
-/*
+
 struct Meme
   {
     let topText: String
@@ -16,12 +16,4 @@ struct Meme
     var originalImage: UIImage?
     var savedMeme: UIImage?
 
-}
-*/
-
-struct Meme {
-    var topText: String = "TOP"
-    var bottomText: String = "BOTTOM"
-    var originalImage: UIImage?
-    var savedMeme: UIImage?
 }

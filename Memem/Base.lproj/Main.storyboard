@@ -99,7 +99,39 @@
             </objects>
             <point key="canvasLocation" x="3231" y="-1319"/>
         </scene>
-        <!--Meme-->
+        <!--Display Selected View Controller-->
+        <scene sceneID="Jyf-mn-i6T">
+            <objects>
+                <viewController storyboardIdentifier="SelectedViewController" id="WLa-sO-Yjf" customClass="DisplaySelectedViewController" customModule="Memem" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rjd-6l-zG5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zw0-KP-XoL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nRB-Xi-Fnh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XDa-jc-jYa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XDa-jc-jYa" firstAttribute="top" secondItem="nRB-Xi-Fnh" secondAttribute="top" id="Is3-XU-kk7"/>
+                            <constraint firstItem="XDa-jc-jYa" firstAttribute="leading" secondItem="nRB-Xi-Fnh" secondAttribute="leading" id="TOi-kW-wgo"/>
+                            <constraint firstItem="Zw0-KP-XoL" firstAttribute="top" secondItem="XDa-jc-jYa" secondAttribute="bottom" id="wqE-Ob-Erw"/>
+                            <constraint firstAttribute="trailing" secondItem="XDa-jc-jYa" secondAttribute="trailing" id="zYe-26-YPH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImage" destination="XDa-jc-jYa" id="8zE-e7-og2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="03q-8K-8wM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2340" y="-425.03748125937034"/>
+        </scene>
+        <!--Meme List-->
         <scene sceneID="NAu-rE-zf3">
             <objects>
                 <tableViewController id="B7l-Xr-DuD" customClass="MemeTableViewController" customModule="Memem" customModuleProvider="target" sceneMemberID="viewController">
@@ -138,10 +170,9 @@
                             <outlet property="delegate" destination="B7l-Xr-DuD" id="DKX-8A-6Dk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Meme" id="sBr-PF-tWY">
+                    <navigationItem key="navigationItem" title="Meme List" id="sBr-PF-tWY">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yTM-mP-tAX">
                             <connections>
-                                <action selector="displayMemeView:" destination="B7l-Xr-DuD" id="NKT-fK-39a"/>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="Une-mY-ZvZ"/>
                             </connections>
                         </barButtonItem>
@@ -215,13 +246,13 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7PO-G9-gKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="-558.17091454272872"/>
+            <point key="canvasLocation" x="1372" y="-425"/>
         </scene>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="bKv-uR-lgY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JWe-Xm-Vho" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="89X-59-qdh"/>
+                    <tabBarItem key="tabBarItem" title="List" image="icons8-Bulleted List-90" selectedImage="icons8-Bulleted List-90" id="89X-59-qdh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hlu-FU-o0U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -236,11 +267,11 @@
             </objects>
             <point key="canvasLocation" x="1372" y="-1319.1904047976013"/>
         </scene>
-        <!--Item-->
+        <!--Collection-->
         <scene sceneID="KKh-Bt-EHZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wtC-Zq-dxI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="nwb-8n-uTe"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="icons8-Menu-90" selectedImage="icons8-Menu-90" id="nwb-8n-uTe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HH7-tp-koV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -253,7 +284,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bmq-h8-BAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1336.8" y="-558.17091454272872"/>
+            <point key="canvasLocation" x="433" y="-425"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-Bulleted List-90" width="16" height="16"/>
+        <image name="icons8-Menu-90" width="90" height="90"/>
+    </resources>
 </document>
