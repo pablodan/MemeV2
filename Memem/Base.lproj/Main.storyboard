@@ -55,6 +55,12 @@
                                             <action selector="shareMeme:" destination="BYZ-38-t0r" id="047-0O-0hQ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TWE-PN-nwu"/>
+                                    <barButtonItem systemItem="cancel" id="xbQ-9i-DkT" userLabel="cancel">
+                                        <connections>
+                                            <action selector="cancelEditMeme:" destination="BYZ-38-t0r" id="b2X-op-qn7"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-hr-NxL">

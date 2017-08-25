@@ -18,6 +18,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var shareButton: UIBarButtonItem!    
     @IBOutlet weak var bottomToolbar: UIToolbar!
     @IBOutlet weak var topToolbar: UIToolbar!
+ 
     
     override func viewDidLoad()
     {
@@ -143,6 +144,11 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         present(controller, animated: true, completion: nil)
         
+    }
+    
+    @IBAction func cancelEditMeme(_ sender: Any)
+    {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
